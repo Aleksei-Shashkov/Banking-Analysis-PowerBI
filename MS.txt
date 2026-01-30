@@ -1,0 +1,21 @@
+===Tasks===
+1.Customer payment data: cleaning, preprocessing, and analytics.
+2. Predicting payments. 
+You would try to answ questions:
+- How does the probability of default payment vary by categories of different demographic variables?
+- Which variables are the strongest predictors of default payment?
+I have dataset and it's description. Don't work with this file in PowerBI!
+You need firstly to remember, how you worked with Microsoft Functions. Because I (or Alexey) put this file into MS Strorage.
+Acceess will be smth like that:
+from azure.storage.blob import BlobClient
+
+=== Into Azure Blob Storage ===
+An example of code:
+import azure.functions as func
+from azure.storage.blob import BlobClient
+
+
+    input_url = "https://<account>.blob.core.windows.net/raw-data/clients.csv"
+    output_url = "https://<account>.blob.core.windows.net/processed-data/clients_clean.csv"
+
+    df = pd.read_csv(input_url)
